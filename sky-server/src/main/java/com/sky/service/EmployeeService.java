@@ -20,4 +20,5 @@ public interface EmployeeService {
 
     public PageResult page(EmployeePageQueryDTO edto);
 
+    public void updatestatus(Integer status,Integer id);
 }

@@ -16,6 +16,7 @@ import io.swagger.annotations.ApiOperation;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -95,5 +96,12 @@ public class EmployeeController {
 
     }
 
+    @PostMapping ("/status/{status}")
+    public Result updatestatus(@PathVariable Integer status,Integer id ){
+
+        employeeService.updatestatus(status,id);
+        return Result.success();
+
+    }
 
 }
